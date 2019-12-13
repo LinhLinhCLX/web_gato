@@ -19,7 +19,7 @@ class CreateProductTable extends Migration
             $table->string('slug');
             $table->string('image');
             $table->float('price', 8, 2)->unsigned();//chỉnh sủa để float hoặc double
-            $table->float('sale_product', 8, 2)->unsigned();
+            $table->float('sale_price', 8, 2)->unsigned();
             $table->integer('active')->default(1);// mặc định là 1 - Hiển thị, 0-Ẩn
             $table->integer('new')->default(1);//mặc định là 1 - sản phẩm mới, 0-Cũ
             $table->integer('count_view')->default(0);// mặc định bằng 0// đếm số view

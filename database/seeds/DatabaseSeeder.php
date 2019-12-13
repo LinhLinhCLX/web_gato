@@ -35,7 +35,12 @@ class DatabaseSeeder extends Seeder
            []
         );
         DB::table('cate_menu')->insert(
-           [],
+           [
+              'name'=>'Home',
+              'number_order'=>1,
+              'description'=>'Trang chur nhes',
+              'active'=>1,
+           ],
            []
         );
         DB::table('cate_blog')->insert(
