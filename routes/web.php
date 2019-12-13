@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ProductController@index')->name('home');
+
+Route::get('/admin', 'admin\ProductController@index')->name('admin.home');
+Route::get('/list', 'admin\ProductController@getListProduct')->name('product.list');
+Route::get('/add', 'admin\ProductController@getAddProduct')->name('product.add');
+
