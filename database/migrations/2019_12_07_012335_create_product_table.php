@@ -27,11 +27,11 @@ class CreateProductTable extends Migration
             $table->text('short_description')->nullable();
             $table->text('full_description')->nullable();
             $table->bigInteger('id_cate_product')->unsigned();// thêm khóa ngoài
-            $table
-                ->foreign('id_cate_product')
-                ->refernces('id')
-                ->on('cate_product')
-                ->onDelete('cascade');
+            // $table
+            //     ->foreign('id_cate_product')
+            //     ->references('id')
+            //     ->on('cate_product')
+            //     ->onDelete('cascade');
             $table->string('size')->nullable();
 
             $table->timestamps();
@@ -46,5 +46,6 @@ class CreateProductTable extends Migration
     public function down()
     {
         Schema::dropIfExists('product');
+        // $table->dropForeign('id_cate_product');
     }
 }

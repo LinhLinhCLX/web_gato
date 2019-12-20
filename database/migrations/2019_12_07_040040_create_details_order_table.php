@@ -15,8 +15,8 @@ class CreateDetailsOrderTable extends Migration
     {
         Schema::create('details_order', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIntger('id_product');
-            $table->bigIntger('id_order');
+            $table->bigInteger('id_product');
+            $table->bigInteger('id_order');
             $table->float('price')->unsigned();// giá sản phẩm tại thời điểm bán
             $table->integer('amount')->unsigned();
             $table->timestamps();

@@ -2,6 +2,7 @@
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 
+use \Illuminate\Support\Facades\DB;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,11 +13,89 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        DB::table('admin_table')->insert([
+            [
+                'name'=>'Admin admin',
+                'email'=> 'admin123@gmail.com',
+                'password'=> bcrypt('123456'),
+                'phone'=>123456789,
+                'active'=>1,
+                'level'=>1,
+                'created_at'=> now(),
+            ],[
+                'name'=>'Linhlinh',
+                'email'=> 'linh123@gmail.com',
+                'password'=> bcrypt('123456'),
+                'phone'=>123456789,
+                'active'=>1,
+                'level'=>1,
+                'created_at'=> now(),
+            ],[
+                'name'=>'admin Truong',
+                'email'=> 'truong123@gmail.com',
+                'password'=> bcrypt('123456'),
+                'phone'=>123456789,
+                'active'=>1,
+                'level'=>1,
+                'created_at'=> now(),
+            ],[
+                'name'=>'Admin Dai',
+                'email'=> 'dai123@gmail.com',
+                'password'=> bcrypt('123456'),
+                'phone'=>123456789,
+                'active'=>1,
+                'level'=>1,
+                'created_at'=> now(),
+            ]
+        ]);
+        DB::table('cate_menu')->insert([
+            [
+                'name'=>'Danh mục sản phẩm',
+                'number_order'=>2,
+                'active'=>1,
+                'description'=>'mô tả Danh mục sản phẩm',
+                'created_at'=> now(),
+            ],
+            [
+                'name'=>'Home',
+                'number_order'=>1,
+                'active'=>1,
+                'description'=>'mô tả Home',
+                'created_at'=> now(),
+            ], [
+                'name'=>'Tin tức',
+                'number_order'=>3,
+                'active'=>1,
+                'description'=>'mô tả Danh mục sản phẩm',
+                'created_at'=> now(),
+            ]
+        ]);
+        DB::table('cate_product')->insert([
+            [
+                'name'=>'Bánh sinh nhật',
+                'slug'=> str_slug('Bánh sinh nhật', '-'),
+                'image'=>'banhhoa4.jpg',
+                'id_cate_menu'=>1,
+                'active'=>1,
+                'description'=>'Bánh sinh nhật',
+                'created_at'=> now(),
+            ],
+            [
+                'name'=>'Bánh hình con vật',
+                'slug'=> str_slug('Bánh hình con vật', '-'),
+                'image'=>'banhhoa4.jpg',
+                'id_cate_menu'=>1,
+                'active'=>1,
+                'description'=>'Banh hình con vật',
+                'created_at'=> now(),
+            ]
+        ]);
+        
         DB::table('product')->insert([
           [
             'name'=>'Blue Kitty',
             'slug'=> str_slug('Hello Kitty', '-'),
-            'image'=>'banh1.jmg',
+            'image'=>'banh1.jpg',
             'price'=>'200000',
             'sale_price'=>'0',
             'new'=>'1',
@@ -33,7 +112,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
           [
             'name'=>'Maruco',
             'slug'=> str_slug('Maruco', '-'),
-            'image'=>'banh2.jmg',
+            'image'=>'banh2.jpg',
             'price'=>'200000',
             'sale_price'=>'0',
             'new'=>'1',
@@ -50,7 +129,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Kute Dog',
                 'slug'=> str_slug('Kute Dog', '-'),
-                'image'=>'banh3.jmg',
+                'image'=>'banh3.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -67,14 +146,14 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Mèo 3D',
                 'slug'=> str_slug('Mèo 3D', '-'),
-                'image'=>'banh4.jmg',
+                'image'=>'banh4.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
                 'count_view'=>0,
                 'count_sale'=>0,
                 'short_description'=>'Mã: BDD004',
-                'full_description'=>'Mã: BDD004
+                'full_description'=>'Mã: BDD00p
 Kích thước to nhỏ tùy theo mức giá. 180.000đ Kích thước đế 18 cm 190.000đ Kích thước đế 20 cm 240.000đ-250.000đ Kích thước đế 22 cm 300.000đ Kích thước đế 26 cm 500.000đ Kích thước đế 35 cm',
                 'id_cate_product'=>1,
                 'size'=>'22cm',
@@ -84,7 +163,7 @@ Kích thước to nhỏ tùy theo mức giá. 180.000đ Kích thước đế 18 
             [
                 'name'=>'Chim cánh cụt',
                 'slug'=> str_slug('Chim cánh cụt', '-'),
-                'image'=>'banh5.jmg',
+                'image'=>'banh5.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -101,7 +180,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Gấu vẽ mặt',
                 'slug'=> str_slug('Gấu vẽ mặt', '-'),
-                'image'=>'banh6.jmg',
+                'image'=>'banh6.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -118,7 +197,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Smiling girl',
                 'slug'=> str_slug('Smiling girl', '-'),
-                'image'=>'banh7.jmg',
+                'image'=>'banh7.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -135,7 +214,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Angry bird',
                 'slug'=> str_slug('Angry bird', '-'),
-                'image'=>'banh8.jmg',
+                'image'=>'banh8.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -152,7 +231,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Doremon',
                 'slug'=> str_slug('Doremon', '-'),
-                'image'=>'banh9.jmg',
+                'image'=>'banh9.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -169,7 +248,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Ô tô 3d',
                 'slug'=> str_slug('Ô tô 3d', '-'),
-                'image'=>'banh10.jmg',
+                'image'=>'banh10.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -185,7 +264,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Khỉ 3d',
                 'slug'=> str_slug('Khỉ 3d', '-'),
-                'image'=>'banh11.jmg',
+                'image'=>'banh11.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -201,7 +280,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Gấu 3d',
                 'slug'=> str_slug('Gấu 3d', '-'),
-                'image'=>'banh10.jmg',
+                'image'=>'banh10.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -217,7 +296,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Gấu panda 3d',
                 'slug'=> str_slug('Gấu panda 3d', '-'),
-                'image'=>'banh10.jmg',
+                'image'=>'banh10.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -234,7 +313,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Fly Cock',
                 'slug'=> str_slug('Fly Cock', '-'),
-                'image'=>'banh16.jmg',
+                'image'=>'banh16.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -251,7 +330,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Eating Dog',
                 'slug'=> str_slug('Eating Dog', '-'),
-                'image'=>'banh17.jmg',
+                'image'=>'banh17.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -268,7 +347,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Fat Dog',
                 'slug'=> str_slug('Fat Dog', '-'),
-                'image'=>'banh18.jmg',
+                'image'=>'banh18.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -285,7 +364,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Monkey Face',
                 'slug'=> str_slug('Monkey Face', '-'),
-                'image'=>'banh19.jmg',
+                'image'=>'banh19.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -302,7 +381,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Pink Pig',
                 'slug'=> str_slug('Pink Pig', '-'),
-                'image'=>'banh20.jmg',
+                'image'=>'banh20.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -319,7 +398,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Trâu xinh',
                 'slug'=> str_slug('Trâu xinh', '-'),
-                'image'=>'banh21.jmg',
+                'image'=>'banh21.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -336,7 +415,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Mickey',
                 'slug'=> str_slug('Mickey', '-'),
-                'image'=>'banh22.jmg',
+                'image'=>'banh22.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -353,7 +432,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Minnie',
                 'slug'=> str_slug('Minnie', '-'),
-                'image'=>'banh23.jmg',
+                'image'=>'banh23.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -370,7 +449,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Tiger',
                 'slug'=> str_slug('Tiger', '-'),
-                'image'=>'banh24.jmg',
+                'image'=>'banh24.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -387,7 +466,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Lợn siêu nhân (Super pig)',
                 'slug'=> str_slug('Lợn siêu nhân (Super pig)', '-'),
-                'image'=>'banh25.jmg',
+                'image'=>'banh25.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -403,7 +482,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Purple Dragon',
                 'slug'=> str_slug('Purple Dragon', '-'),
-                'image'=>'banh26.jmg',
+                'image'=>'banh26.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -420,7 +499,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Mèo mimi',
                 'slug'=> str_slug('Mèo mimi', '-'),
-                'image'=>'banh27.jmg',
+                'image'=>'banh27.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -437,7 +516,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Hey boy',
                 'slug'=> str_slug('Hey boy', '-'),
-                'image'=>'banh28.jmg',
+                'image'=>'banh28.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -454,7 +533,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Lady smiling',
                 'slug'=> str_slug('Lady smiling', '-'),
-                'image'=>'banh29.jmg',
+                'image'=>'banh29.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -471,7 +550,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Tiger face',
                 'slug'=> str_slug('Tiger face', '-'),
-                'image'=>'banh30.jmg',
+                'image'=>'banh30.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -488,7 +567,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Snake',
                 'slug'=> str_slug('Snake', '-'),
-                'image'=>'banh31.jmg',
+                'image'=>'banh31.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -505,7 +584,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Fat Pig',
                 'slug'=> str_slug('Fat Pig', '-'),
-                'image'=>'banh32.jmg',
+                'image'=>'banh32.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -522,7 +601,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Dog Dog',
                 'slug'=> str_slug('Dog Dog', '-'),
-                'image'=>'banh33.jmg',
+                'image'=>'banh33.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -539,7 +618,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Gà Mẹ',
                 'slug'=> str_slug('Gà Mẹ', '-'),
-                'image'=>'banh34.jmg',
+                'image'=>'banh34.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -556,7 +635,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Vịt Donald',
                 'slug'=> str_slug('Vịt Donald', '-'),
-                'image'=>'banh35.jmg',
+                'image'=>'banh35.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -573,7 +652,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Dê xì tin',
                 'slug'=> str_slug('Dê xì tin', '-'),
-                'image'=>'banh36.jmg',
+                'image'=>'banh36.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -590,7 +669,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Bánh giỏ hoa',
                 'slug'=> str_slug('Bánh giỏ hoa', '-'),
-                'image'=>'banhhoa1.jmg',
+                'image'=>'banhhoa1.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -607,7 +686,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Bánh màu hoa',
                 'slug'=> str_slug('Bánh màu hoa', '-'),
-                'image'=>'banhhoa2.jmg',
+                'image'=>'banhhoa2.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -623,7 +702,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Bánh hoa trái tim',
                 'slug'=> str_slug('Bánh hoa trái tim', '-'),
-                'image'=>'banhhoa3.jmg',
+                'image'=>'banhhoa3.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -639,7 +718,7 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
             [
                 'name'=>'Bánh hoa tim',
                 'slug'=> str_slug('Bánh hoa tim', '-'),
-                'image'=>'banhhoa4.jmg',
+                'image'=>'banhhoa4.jpg',
                 'price'=>'200000',
                 'sale_price'=>'0',
                 'new'=>'1',
@@ -651,33 +730,11 @@ Kích thước to nhỏ tùy theo mức giá. 200.000đ Kích thước đế 18 
                 'id_cate_product'=>1,
                 'size'=>'22cm',
                 'created_at'=> now(),
-            ],
+            ]
 
         ]);
-        DB::table('cate_product')->insert(
-           [],
-           []
-        );
-        DB::table('cate_menu')->insert(
-           [],
-           []
-        );
-        DB::table('cate_blog')->insert(
-           [],
-           []
-        );
-        DB::table('blog')->insert(
-           [],
-           []
-        );
-        DB::table('users')->insert(
-           [],
-           []
-        );
-        DB::table('users')->insert(
-           [],
-           []
-        );
+        
+
         
         
         
