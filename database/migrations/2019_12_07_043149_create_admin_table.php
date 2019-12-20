@@ -13,7 +13,7 @@ class CreateAdminTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin', function (Blueprint $table) {
+        Schema::create('admin_table', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('email')->unique();
             $table->string('name');
@@ -21,10 +21,10 @@ class CreateAdminTable extends Migration
             $table->bigInteger('phone');
             $table->integer('active')->default(1);//
             $table->bigInteger('level')->unsigned();
-            $table
-                ->foreign('level')
-                ->references('id')
-                ->on('permission');
+            // $table
+            //     ->foreign('level')
+            //     ->references('id')
+            //     ->on('permission');
             $table->timestamps();
         });
          Schema::create('user', function (Blueprint $table) {
@@ -55,6 +55,8 @@ class CreateAdminTable extends Migration
      */
     public function down()
     {
-        // Schema::dropIfExists('admin');
+        Schema::dropIfExists('admin_table');
+        Schema::dropIfExists('user');
+        Schema::dropIfExists('message_contact');
     }
 }

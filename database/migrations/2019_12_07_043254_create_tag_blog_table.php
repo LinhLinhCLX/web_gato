@@ -18,10 +18,10 @@ class CreateTagBlogTable extends Migration
             $table->string('name');
             $table->integer('active')->default(1);//
             $table->bigInteger('id_blog')->unsigned();
-            $table
-                ->foreign('id_blog')
-                ->references('id')
-                ->on('blog');
+            // $table
+            //     ->foreign('id_blog')
+            //     ->references('id')
+            //     ->on('blog');
             $table->timestamps();
         });
     }
