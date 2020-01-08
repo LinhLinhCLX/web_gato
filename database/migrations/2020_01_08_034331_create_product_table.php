@@ -26,14 +26,11 @@ class CreateProductTable extends Migration
             $table->integer('count_sale')->default(0);// mặc định bằng 0//số lượng sp bán được
             $table->text('short_description')->nullable();
             $table->text('full_description')->nullable();
-            $table->bigInteger('id_cate_product')->unsigned();// thêm khóa ngoài
-            // $table
-            //     ->foreign('id_cate_product')
-            //     ->references('id')
-            //     ->on('cate_product')
-            //     ->onDelete('cascade');
+            $table->unsignedBigInteger('id_cate_product');// thêm khóa ngoài
+            $table->foreign('id_cate_product')
+                ->references('id')
+                ->on('cate_product');
             $table->string('size')->nullable();
-
             $table->timestamps();
         });
     }

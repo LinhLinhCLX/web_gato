@@ -13,6 +13,65 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        DB::table('cate_menu')->insert([
+            [
+                'name'=>'Danh mục sản phẩm',
+                'number_order'=>2,
+                'active'=>1,
+                'description'=>'mô tả Danh mục sản phẩm',
+                'created_at'=> now(),
+            ],
+            [
+                'name'=>'Home',
+                'number_order'=>1,
+                'active'=>1,
+                'description'=>'mô tả Home',
+                'created_at'=> now(),
+            ], [
+                'name'=>'Bai viet',
+                'number_order'=>3,
+                'active'=>1,
+                'description'=>'mô tả Danh mục bài viết',
+                'created_at'=> now(),
+            ], [
+                'name'=>'Liên hệ',
+                'number_order'=>4,
+                'active'=>1,
+                'description'=>'mô tả Liên hệ',
+                'created_at'=> now(),
+            ]
+        ]);
+        DB::table('cate_product')->insert([
+            [
+                'name'=>'Bánh sinh nhật',
+                'slug'=> str_slug('Bánh sinh nhật', '-'),
+                'image'=>'banhhoa4.jpg',
+                'id_cate_menu'=>1,
+                'active'=>1,
+                'description'=>'Bánh sinh nhật',
+                'created_at'=> now(),
+            ],
+            [
+                'name'=>'Bánh hình con vật',
+                'slug'=> str_slug('Bánh hình con vật', '-'),
+                'image'=>'banhhoa4.jpg',
+                'id_cate_menu'=>1,
+                'active'=>1,
+                'description'=>'Banh hình con vật',
+                'created_at'=> now(),
+            ]
+        ]);
+        DB::table('permission')->insert([
+            [
+                'name'=>'admin',
+                'created_at'=>now(),
+            ],
+            [
+                'name'=>'Cộng tác viên viết bài',
+                'created_at'=>now(),
+            ]
+        ]);
+        
         DB::table('admin_table')->insert([
             [
                 'name'=>'Admin admin',
@@ -45,48 +104,6 @@ class DatabaseSeeder extends Seeder
                 'phone'=>123456789,
                 'active'=>1,
                 'level'=>1,
-                'created_at'=> now(),
-            ]
-        ]);
-        DB::table('cate_menu')->insert([
-            [
-                'name'=>'Danh mục sản phẩm',
-                'number_order'=>2,
-                'active'=>1,
-                'description'=>'mô tả Danh mục sản phẩm',
-                'created_at'=> now(),
-            ],
-            [
-                'name'=>'Home',
-                'number_order'=>1,
-                'active'=>1,
-                'description'=>'mô tả Home',
-                'created_at'=> now(),
-            ], [
-                'name'=>'Tin tức',
-                'number_order'=>3,
-                'active'=>1,
-                'description'=>'mô tả Danh mục sản phẩm',
-                'created_at'=> now(),
-            ]
-        ]);
-        DB::table('cate_product')->insert([
-            [
-                'name'=>'Bánh sinh nhật',
-                'slug'=> str_slug('Bánh sinh nhật', '-'),
-                'image'=>'banhhoa4.jpg',
-                'id_cate_menu'=>1,
-                'active'=>1,
-                'description'=>'Bánh sinh nhật',
-                'created_at'=> now(),
-            ],
-            [
-                'name'=>'Bánh hình con vật',
-                'slug'=> str_slug('Bánh hình con vật', '-'),
-                'image'=>'banhhoa4.jpg',
-                'id_cate_menu'=>1,
-                'active'=>1,
-                'description'=>'Banh hình con vật',
                 'created_at'=> now(),
             ]
         ]);

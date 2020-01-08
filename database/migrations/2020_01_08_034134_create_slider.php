@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSliderTable extends Migration
+class CreateSlider extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateSliderTable extends Migration
      */
     public function up()
     {
+        
         Schema::create('slider', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('active')->default(1);//check tên ko được trùng lặp
+            $table->integer('active')->default(1);
             $table->string('image');
-            $table->integer('number_order')->default(100);
+            $table->integer('number_order')->default(1);
             $table->timestamps();
         });
     }

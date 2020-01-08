@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBlogTable extends Migration
+class CreateCateBlogTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateBlogTable extends Migration
      */
     public function up()
     {
-        Schema::create('blog', function (Blueprint $table) {
+        Schema::create('cate_blog', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            // $table->integer('slug');// đánh số thứ tự hiển thị trên thanh menu
-            $table->text('short_description')->nullable();
-            $table->text('full_description')->nullable();
+            $table->integer('slug');// đánh số thứ tự hiển thị trên thanh menu
+            $table->text('description')->nullable();
             $table->integer('active')->default(1);//1 hiển thị, 0 ẩn
             $table->string('image')->nullable();
-            $table->bigInteger('id_admin')->unsigned();
+            $table->unsignedBigInteger('id_cate_menu');
+            $table->foreign('id_cate_menu')
+                ->references('id')
+                ->on('cate_menu');
             $table->timestamps();
         });
     }
@@ -33,6 +35,6 @@ class CreateBlogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog');
+        Schema::dropIfExists('cate_blog');
     }
 }

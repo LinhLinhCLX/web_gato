@@ -38,8 +38,9 @@
 	                        <label>Danh mục sản phẩm</label>
 	                        <select name="id_category" class="form-control">
 								<option value="0">---Chọn---</option>
-								<option value="0">Bánh sinh nhật</option>
-
+								@foreach( $list_cate_product as $item)
+								<option value="{{$item->id}}">{{$item->name}}</option>
+								@endforeach
 	                        	{{--@foreach($category as $item)
 	                            	<option value="{{$item->id}}">{{$item->name}}</option>
 	                            @endforeach

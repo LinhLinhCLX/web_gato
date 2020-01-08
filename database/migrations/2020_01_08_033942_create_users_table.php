@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTagBlogTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateTagBlogTable extends Migration
      */
     public function up()
     {
-        Schema::create('tag_blog', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('active')->default(1);//
-            $table->bigInteger('id_blog')->unsigned();
-            // $table
-            //     ->foreign('id_blog')
-            //     ->references('id')
-            //     ->on('blog');
+            $table->string('email')->unique();
+            // $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->string('phone');
+            $table->string('content');
+            $table->string('title');
+            // $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class CreateTagBlogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tag_blog');
+        Schema::dropIfExists('users');
     }
 }
