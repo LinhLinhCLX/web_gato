@@ -87,7 +87,7 @@
                             <td class="center">{{number_format( $item->sale_price,0,"","," )}}</td>
                    
                             <td class="center">{{$item->id_cate_product}}</td>
-                            @if($item->new == 1)
+                            @if($item->news == 1)
                             <td> 
                                Mới
                             </td>

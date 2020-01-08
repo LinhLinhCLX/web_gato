@@ -11,7 +11,7 @@
 	</ul>
 	<hr>
     <div>
-            {{-- @if(count($errors) > 0)
+            @if(count($errors) > 0)
                 <div class="alert alert-danger">
                     @foreach($errors->all() as $err)
                         {{$err}}<br>
@@ -19,7 +19,7 @@
 
                 </div>
 
-            @endif --}}
+            @endif
          
     </div>
 </div>

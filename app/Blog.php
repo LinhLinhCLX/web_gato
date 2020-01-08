@@ -15,4 +15,8 @@ class Blog extends Model
     {
     	return $this->belongsTo('App\Admin_table', 'id_admin', 'id');
     }
+    public function cate_blog()
+    {
+    	return $this->belongsTo('App\Cate_blog', 'id_cate_blog', 'id');
+    }
 }
