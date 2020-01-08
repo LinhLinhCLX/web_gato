@@ -15,9 +15,10 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_user');
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('users');
             $table->integer('status')->default(1);//là id trạng thái, trạng thái của đơn hàng
-            $table->text('time_receipt')->nullable();
+            $table->text('time_receipt')->nullable();//thowif gian nhaanj hangf
             $table->float('sub_total')->unsigned(); // tổng hóa đơn khi chưa discount
             $table->string('title_cake')->nullable();
             $table->float('sub_total_pay')->unsigned();// tổng hóa đơn trước discount

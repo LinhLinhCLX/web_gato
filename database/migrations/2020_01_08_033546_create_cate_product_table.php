@@ -19,10 +19,10 @@ class CreateCateProductTable extends Migration
             $table->string('name')->unique();//check tên ko được trùng lặp
             $table->string('slug');
             $table->string('image');
-            $table->bigInteger('id_cate_menu')->unsigned();
-            // $table->foreign('id_cate_menu')
-            //     ->references('id')
-            //     ->on('cate_menu');
+            $table->unsignedBigInteger('id_cate_menu');
+            $table->foreign('id_cate_menu')
+                ->references('id')
+                ->on('cate_menu');
             $table->integer('active')->default(1);// mặc định là 1 - Hiển thị, 0-Ẩn
             $table->text('description')->nullable();
             $table->timestamps();

@@ -9,7 +9,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-
+    protected $table ="user";
+    public function permission(){
+        return $this->belongsTo('App\Permission','level','id');
+    }
+    public function orders()
+    {
+        return $this->hasMany('App\Orders', 'id_user', 'id');
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -36,4 +43,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }

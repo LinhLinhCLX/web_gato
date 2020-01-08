@@ -18,13 +18,12 @@ class CreateAdminTable extends Migration
             $table->string('email')->unique();
             $table->string('name');
             $table->string('password');
-            $table->bigInteger('phone');
+            $table->string('phone');
             $table->integer('active')->default(1);//
-            $table->bigInteger('level')->unsigned();
-            // $table
-            //     ->foreign('level')
-            //     ->references('id')
-            //     ->on('permission');
+            $table->unsignedBigInteger('level');
+            $table->foreign('level')
+                ->references('id')
+                ->on('permission');
             $table->timestamps();
         });
          Schema::create('user', function (Blueprint $table) {
@@ -33,7 +32,7 @@ class CreateAdminTable extends Migration
             $table->string('name');
             $table->string('password');
             $table->integer('active')->default(1);
-            $table->bigInteger('phone');
+            $table->string('phone');
             $table->timestamps();
         });
           Schema::create('message_contact', function (Blueprint $table) {

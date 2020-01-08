@@ -21,8 +21,8 @@ class ProductController extends Controller
     public function getAddProduct()
     {
         $dataView['list_cate_product'] = DB::table('cate_product')->get();
-        dd($dataView);
-    	return view('admin.product.addproduct');
+        // dd($dataView);
+    	return view('admin.product.addproduct', $dataView);
     }
     public function postAddProduct()
     {
