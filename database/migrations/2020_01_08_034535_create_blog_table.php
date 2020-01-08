@@ -23,7 +23,8 @@ class CreateBlogTable extends Migration
             $table->string('image')->nullable();
             $table->unsignedBigInteger('id_admin');
             $table->foreign('id_admin')->references('id')->on('admin_table');
-
+            $table->unsignedBigInteger('id_cate_blog');
+            $table->foreign('id_cate_blog')->references('id')->on('blog');
             $table->timestamps();
         });
     }

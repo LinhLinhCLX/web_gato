@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'ProductController@index')->name('home');
+Route::get('/', 'client\HomeController@index')->name('home');
 
 Route::get('/admin', 'admin\ProductController@index')->name('admin.home');
 

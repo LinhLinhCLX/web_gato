@@ -2,6 +2,7 @@
     <!-- Begin Footer Static Top Area -->
     <div class="footer-static-top">
         <div class="container">
+            {{--
             <!-- Begin Footer Shipping Area -->
             <div class="footer-shipping pt-60 pb-55 pb-xs-25">
                 <div class="row">
@@ -60,6 +61,7 @@
                 </div>
             </div>
             <!-- Footer Shipping Area End Here -->
+            --}}
         </div>
     </div>
     <!-- Footer Static Top Area End Here -->
@@ -71,58 +73,59 @@
                     <!-- Begin Footer Logo Area -->
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-logo">
-                            <img src="images/menu/logo/1.jpg" alt="Footer Logo">
-                            <p class="info">
-                                We are a team of designers and developers that create high quality HTML Template & Woocommerce, Shopify Theme.
-                            </p>
+                            <img src="assets/logo_01_03.png" alt="Footer Logo" height="80px" width="80px">
+                            {{--<p class="info">
+                                Nhóm 3 - Website Bán bánh kem - LPHP1907e.
+                            </p>--}}
                         </div>
                         <ul class="des">
                             <li>
-                                <span>Address: </span>
-                                6688Princess Road, London, Greater London BAS 23JK, UK
+                                <span>Địa chỉ: </span>
+                                Trung tâm T3H.
                             </li>
                             <li>
-                                <span>Phone: </span>
-                                <a href="#">(+123) 123 321 345</a>
+                                <span>Liên Hệ: </span>
+                                <a href="tel:0398225413">039 822 5413</a>
                             </li>
                             <li>
                                 <span>Email: </span>
-                                <a href="mailto://info@yourdomain.com">info@yourdomain.com</a>
+                                <a href="mailto:1906daolinh@gmail.com">1906daolinh@gmail.com</a>
                             </li>
                         </ul>
                     </div>
                     <!-- Footer Logo Area End Here -->
                     <!-- Begin Footer Block Area -->
-                    <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="footer-block">
-                            <h3 class="footer-block-title">Product</h3>
+                            <h3 class="footer-block-title">Danh mục sản phẩm</h3>
                             <ul>
-                                <li><a href="#">Prices drop</a></li>
-                                <li><a href="#">New products</a></li>
-                                <li><a href="#">Best sales</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Bánh sinh nhật</a></li>
+                                <li><a href="#">Bánh hoạt hình</a></li>
+                                <li><a href="#">Bánh kem</a></li>
                             </ul>
                         </div>
                     </div>
                     <!-- Footer Block Area End Here -->
+                    {{--
                     <!-- Begin Footer Block Area -->
                     <div class="col-lg-2 col-md-3 col-sm-6">
                         <div class="footer-block">
-                            <h3 class="footer-block-title">Our company</h3>
+                            <h3 class="footer-block-title">Thông tin</h3>
                             <ul>
-                                <li><a href="#">Delivery</a></li>
-                                <li><a href="#">Legal Notice</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Giao hàng</a></li>
+                                <li><a href="#">Giới thiệu</a></li>
+                                <li><a href="#">Liên hệ</a></li>
                             </ul>
                         </div>
                     </div>
                     <!-- Footer Block Area End Here -->
+                    --}}
                     <!-- Begin Footer Block Area -->
                     <div class="col-lg-4">
                         <div class="footer-block">
                             <h3 class="footer-block-title">Follow Us</h3>
                             <ul class="social-link">
+                                {{--
                                 <li class="twitter">
                                     <a href="https://twitter.com/" data-toggle="tooltip" target="_blank" title="Twitter">
                                         <i class="fa fa-twitter"></i>
@@ -133,13 +136,15 @@
                                         <i class="fa fa-rss"></i>
                                     </a>
                                 </li>
+                                --}}
+                                
                                 <li class="google-plus">
-                                    <a href="https://www.plus.google.com/discover" data-toggle="tooltip" target="_blank" title="Google Plus">
+                                    <a href="mailto:1906daolinh@gmail.com" data-toggle="tooltip" target="_blank" title="Google Plus">
                                         <i class="fa fa-google-plus"></i>
                                     </a>
                                 </li>
                                 <li class="facebook">
-                                    <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank" title="Facebook">
+                                    <a href="https://www.facebook.com/nho.songlinh" data-toggle="tooltip" target="_blank" title="Facebook">
                                         <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>
@@ -157,12 +162,12 @@
                         </div>
                         <!-- Begin Footer Newsletter Area -->
                         <div class="footer-newsletter">
-                            <h4>Sign up to newsletter</h4>
+                            <h4>Đăng ký nhận tin mới nhất</h4>
                             <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="footer-subscribe-form validate" target="_blank" novalidate>
                                <div id="mc_embed_signup_scroll">
                                   <div id="mc-form" class="mc-form subscribe-form form-group" >
-                                    <input id="mc-email" type="email" autocomplete="off" placeholder="Enter your email" />
-                                    <button  class="btn" id="mc-submit">Subscribe</button>
+                                    <input id="mc-email" type="email" autocomplete="off" placeholder="Nhập email vào đây ..." />
+                                    <button  class="btn" id="mc-submit">Đăng ký</button>
                                   </div>
                                </div>
                             </form>
@@ -176,10 +181,11 @@
     </div>
     <!-- Footer Static Middle Area End Here -->
     <!-- Begin Footer Static Bottom Area -->
-    <div class="footer-static-bottom pt-55 pb-55">
+    <div class="footer-static-bottom pt-10 pb-10">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    {{--
                     <!-- Begin Footer Links Area -->
                     <div class="footer-links">
                         <ul>
@@ -212,9 +218,16 @@
                         </a>
                     </div>
                     <!-- Footer Payment Area End Here -->
+                    --}}
                     <!-- Begin Copyright Area -->
-                    <div class="copyright text-center pt-25">
+                    <div class="copyright text-center" style="padding: 0px; margin:10px;">
+                        {{--
                         <span><a href="https://www.templatespoint.net" target="_blank">Templates Point</a></span>
+                        --}}
+                        <span  style="padding: 0px; margin:10px;">
+                            <i class="far fa-copyright" aria-hidden="true"></i>
+                            <a href="http://tldcake.tk/" target="_blank">Copyright 2019 | by NHOM3: Trường & Linh & Đại - LPHP1907e</a>
+                        </span>
                     </div>
                     <!-- Copyright Area End Here -->
                 </div>
