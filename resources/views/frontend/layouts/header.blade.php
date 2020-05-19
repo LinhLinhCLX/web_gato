@@ -1,8 +1,8 @@
 <!-- Begin Header Area -->
 <header>
-    {{--
+    
     <!-- Begin Header Top Area -->
-    <div class="header-top">
+    {{--<div class="header-top">
         <div class="container">
             <div class="row">
                 <!-- Begin Header Top Left Area -->
@@ -60,9 +60,9 @@
                 <!-- Header Top Right Area End Here -->
             </div>
         </div>
-    </div>
+    </div>--}}
     <!-- Header Top Area End Here -->
-    --}}
+    
     <!-- Begin Header Middle Area -->
     <div class="header-middle pl-sm-0 pr-sm-0 pl-xs-0 pr-xs-0">
         <div class="container">
@@ -92,14 +92,12 @@
                     <div class="header-middle-right">
                         <ul class="hm-menu">
                             <!-- Begin Header Middle Wishlist Area -->
-                            {{--
-                            <li class="hm-wishlist">
+                            {{--<li class="hm-wishlist">
                                 <a href="wishlist.html">
                                     <span class="cart-item-count wishlist-item-count">0</span>
                                     <i class="fa fa-heart-o"></i>
                                 </a>
-                            </li>
-                            --}}
+                            </li>--}}
                             <!-- Header Middle Wishlist Area End Here -->
                             <!-- Begin Header Mini Cart Area -->
                             <li class="hm-minicart">
@@ -166,8 +164,7 @@
                     <!-- Begin Header Bottom Menu Area -->
                     <div class="hb-menu">
                         <nav>
-                        {{--
-                            <ul>
+                            {{--<ul>
                                 <li class="dropdown-holder"><a href="index.html">Home</a>
                                     <ul class="hb-dropdown">
                                         <li class="active"><a href="index.html">Home One</a></li>
@@ -287,11 +284,10 @@
                                 <li><a href="contact.html">Contact</a></li>
                                 <li><a href="shop-left-sidebar.html">Smartwatch</a></li>
                                 <li><a href="shop-left-sidebar.html">Accessories</a></li>
-                            </ul>
-                        --}}
+                            </ul>--}}
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li class="dropdown-holder"><a href="#">Danh mục sản phẩm</a>
+                                <li><a href="{{route('home')}}">Home</a></li>
+                                <li class="dropdown-holder"><a href="#"  class="menu-top-down">Danh mục sản phẩm</a>
                                     <ul class="hb-dropdown">
                                         <li>
                                             <a href="#">Bánh sinh nhật</a>
@@ -304,7 +300,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="dropdown-holder"><a href="blog-left-sidebar.html">Bài viết</a>
+                                <li class="dropdown-holder"><a href="blog-left-sidebar.html"  class="menu-top-down">Bài viết</a>
                                     <ul class="hb-dropdown">
                                         <li class="">
                                             <a href="#">Vào bếp</a>

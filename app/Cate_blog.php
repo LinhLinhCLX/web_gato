@@ -13,6 +13,7 @@ class Cate_blog extends Model
     }
     public function blog()
     {
+    	// return $this->hasMany('App\Blog');
     	return $this->hasMany('App\Blog', 'id_cate_blog', 'id');
     }
 }

@@ -19,6 +19,7 @@ class CreateAdminTable extends Migration
             $table->string('name');
             $table->string('password');
             $table->string('phone');
+            $table->string('image');
             $table->integer('active')->default(1);//
             $table->unsignedBigInteger('level');
             $table->foreign('level')

@@ -41,8 +41,37 @@
                     <li> <a href="#"> Đơn đã xử lý </a> </li>
                 </ul>
             </li>
-
-            {{-- Liên hệ --}}
+            
+            {{-- product --}}
+            <li class="start  open "> <a href="#"><i
+                class="material-icons">format_list_bulleted</i> <span class="title">Sản phẩm</span> <span
+                class="selected"></span> <span class="arrow  open "></span>
+                </a>
+                <ul class="sub-menu">
+                    <li> <a href="{{route('cate_product.list')}}"> Danh mục </a> </li>
+                    <li> <a href="{{route('product.list')}}"> Danh sách sản phẩm </a> </li>
+                </ul>
+            </li>
+            {{-- Bài viết --}}
+            <li class="start  open "> <a href="admin/news"><i
+                class="material-icons">library_books</i> <span class="title">Bài viết</span> <span
+                class="selected"></span> <span class="arrow  open "></span>
+                </a>
+                <ul class="sub-menu">
+                        <li> <a href="{{route('blog.add')}}"> Thêm Bài viết </a> </li>
+                        <li> <a href="{{route('blog.list')}}"> Danh sách Bài viết </a> </li>
+                </ul>
+            </li>
+            {{--Thanh menu frontend--}}
+            <li>
+                <a href="javascript:;"> <i class="material-icons">view_stream</i> <span class="title">Quản lý thanh menu</span> <span
+                        class=" arrow"></span> </a>
+                <ul class="sub-menu">
+                    <li> <a href="{{route('cate_menu.add')}}">Thêm menu frontend</a> </li>
+                    <li> <a href="{{route('cate_menu.list')}}">Danh sách menu frontend</a> </li>
+                </ul>
+            </li>
+            {{-- Liên hệ 
             <li class="start  open"> <a href="#"><i
                         class="material-icons">contact_phone</i> <span class="title">Liên hệ</span> <span
                         class="selected"></span> <span class="arrow  open "></span>
@@ -52,37 +81,24 @@
                     <li> <a href="#"> Thông tin liên hệ </a> </li>
                 </ul>
             </li>
-
-            {{-- tin tức --}}
-            <li class="start  open "> <a href="admin/news"><i
-                class="material-icons">library_books</i> <span class="title">Tin tức</span> <span
-                class="selected"></span> <span class="arrow  open "></span>
-                </a>
-                <ul class="sub-menu">
-                        <li> <a href="#"> Thêm Tin Tức </a> </li>
-                        <li> <a href="#"> Danh sách Tin Tức </a> </li>
-                </ul>
-            </li>
-
-            {{-- product --}}
-            <li class="start  open "> <a href="#"><i
-                class="material-icons">format_list_bulleted</i> <span class="title">Sản phẩm</span> <span
-                class="selected"></span> <span class="arrow  open "></span>
-                </a>
-                <ul class="sub-menu">
-                    <li> <a href="#"> Danh mục </a> </li>
-                    <li> <a href="#"> Danh sách sản phẩm </a> </li>
-                </ul>
-            </li>
-
-            {{-- Đại lý --}}
+            --}}
+            {{-- Quản trị viên --}}
             <li class="start  open"> <a href="#"><i
-                class="material-icons">business</i> <span class="title">Đại lý</span> <span
+                class="material-icons">business</i> <span class="title">Quản trị viên</span> <span
                 class="selected"></span> <span class="arrow  open "></span>
                 </a>
                 <ul class="sub-menu">
-                    <li> <a href="#">Danh sách đại lý</a> </li>
-                    <li> <a href="#">Thêm đại lý</a> </li>
+                    <li> <a href="{{route('admin_user.add')}}">Thêm Quản trị viên</a> </li>
+                    <li> <a href="{{route('admin_user.list')}}">Danh sách Quản trị viên</a> </li>
+                </ul>
+            </li>
+            {{--Phân quyền--}}
+            <li>
+                <a href="javascript:;"> <i class="material-icons">view_stream</i> <span class="title">Quyền truy cập</span> <span
+                        class=" arrow"></span> </a>
+                <ul class="sub-menu">
+                    <li> <a href="{{route('permission.add')}}">Thêm quyền truy cập</a> </li>
+                    <li> <a href="{{route('permission.list')}}">Danh sách quyền truy cập</a> </li>
                 </ul>
             </li>
 {{-- 

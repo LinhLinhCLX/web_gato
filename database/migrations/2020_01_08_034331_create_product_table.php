@@ -22,8 +22,8 @@ class CreateProductTable extends Migration
             $table->float('sale_price', 8, 2)->unsigned();
             $table->integer('active')->default(1);// mặc định là 1 - Hiển thị, 0-Ẩn
             $table->integer('news')->default(1);//mặc định là 1 - sản phẩm mới, 0-Cũ
-            $table->integer('count_view')->default(0);// mặc định bằng 0// đếm số view
-            $table->integer('count_sale')->default(0);// mặc định bằng 0//số lượng sp bán được
+            $table->integer('count_view')->default(random_int(10, 60));// mặc định bằng 0// đếm số view
+            $table->integer('count_sale')->default(random_int(10, 60));// mặc định bằng 0//số lượng sp bán được
             $table->text('short_description')->nullable();
             $table->text('full_description')->nullable();
             $table->unsignedBigInteger('id_cate_product');// thêm khóa ngoài
