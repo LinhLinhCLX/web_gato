@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<div class="col-xs-6 col-md-12 col-lg-12">
+<div class="col-xs-12 col-md-12 col-lg-12">
     <div class="panel panel-primary">
         <div class="panel-heading" style="font-size:16px">Thêm sản phẩm</div>
         <div class="panel-body">
@@ -127,4 +127,5 @@
         </div>
     </div>
 </div>
+
 @endsection

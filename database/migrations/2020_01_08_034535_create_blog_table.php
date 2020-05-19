@@ -20,6 +20,7 @@ class CreateBlogTable extends Migration
             $table->text('short_description')->nullable();
             $table->text('full_description')->nullable();
             $table->integer('active')->default(1);//1 hiển thị, 0 ẩn
+            $table->integer('count_view')->default(random_int(10, 60));
             $table->string('image')->nullable();
             $table->unsignedBigInteger('id_admin');
             $table->foreign('id_admin')->references('id')->on('admin_table');

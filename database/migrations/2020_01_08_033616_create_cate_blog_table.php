@@ -16,7 +16,7 @@ class CreateCateBlogTable extends Migration
         Schema::create('cate_blog', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('slug');// đánh số thứ tự hiển thị trên thanh menu
+            $table->string('slug');
             $table->text('description')->nullable();
             $table->integer('active')->default(1);//1 hiển thị, 0 ẩn
             $table->string('image')->nullable();

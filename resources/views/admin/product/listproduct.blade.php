@@ -110,7 +110,7 @@
                             
                             <td><i class="fa fa-eye" aria-hidden="true"> </i>{{$item->count_view}}</td>
                             <td class="center">
-                                <a href="{{route('product.edit')}}"  ><button class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"> </i></button></a>
+                                <a href="{{route('product.edit', ['id' => $item->id])}}"  ><button class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"> </i></button></a>
                                 <a href="#" onclick="return confirm('Hành động sẽ xóa sản phẩm này! bạn có muốn tiếp tục?')" ><button class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"> </i></button></a>
                                 
                             </td>

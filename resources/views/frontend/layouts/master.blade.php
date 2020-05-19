@@ -6,9 +6,11 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>@yield('title')</title>
+        <base href="{{asset('')}}">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
+
         <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png">
         <!-- Material Design Iconic Font-V2.2.0 -->
         <link rel="stylesheet" href="frontend-template/css/material-design-iconic-font.min.css">
