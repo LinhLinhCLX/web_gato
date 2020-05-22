@@ -10,8 +10,15 @@ use DB;
 use App\Blog;
 
 
-class BlogController extends Controller
+class BlogController extends HomeController
 {
+    public function __construct()
+
+    {
+
+        parent::__construct();
+
+    }
     //
     public function getListBlog()
     {
@@ -23,9 +30,14 @@ class BlogController extends Controller
     	// dd($dataView);
     	return view('frontend.blog.listblog', $dataView);
     }
-    public function getBlog($slug)
+    public function getBlogDetail($slug, Request $request)
     {
     	// echo 'getBlog';
+        // dd($request->slug);
+        if(!$request->session()->has($request->slug))
+        {
+            DB::table('blog')->where('slug',$request->slug)->increment('count_view',1);
+        }
     	$blog = Blog::where([
     		['active', '=', '1'],
     		['slug', '=', $slug],

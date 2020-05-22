@@ -34,6 +34,7 @@ class CreateAdminTable extends Migration
             $table->string('password');
             $table->integer('active')->default(1);
             $table->string('phone');
+            $table->unsignedBigInteger('level');
             $table->timestamps();
         });
           Schema::create('message_contact', function (Blueprint $table) {

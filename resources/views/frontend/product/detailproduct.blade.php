@@ -1,9 +1,9 @@
-<!-- <h1>Detail blog</h1> -->
+<!-- <h1>Detail product</h1> -->
 
 @extends('frontend.layouts.master')
 
 @section('title')
-	{{$blog->name}}
+	{{$product->name}}
 @endsection
 @section('content')
 
@@ -14,8 +14,8 @@
         <div class="breadcrumb-content">
             <ul>
                 <li><a href="{{route('home')}}">Home</a></li>
-                <li><a href="{{route('client.blog.list')}}">Bài viết</a></li>
-                <li class="active">{{$blog->name}}</li>
+                <li><a href="{{route('client.product.list')}}">Bài viết</a></li>
+                <li class="active">{{$product->name}}</li>
             </ul>
         </div>
     </div>
@@ -27,8 +27,9 @@
     <div class="container">
         <div class="breadcrumb-content">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="active">Single Product</li>
+                <li><a href="{{route('home')}}">Home</a></li>
+                <li><a href="{{route('client.product.list')}}">Sản phẩm </a></li>
+                <li class="active">{{$product->name}}</li>
             </ul>
         </div>
     </div>
@@ -39,7 +40,8 @@
     <div class="container">
         <div class="row single-product-area">
             <div class="col-lg-5 col-md-6">
-               <!-- Product Details Left -->
+               
+                {{--<!-- Product Details Left -->
                 <div class="product-details-left">
                     <div class="product-details-images slider-navigation-1">
                         <div class="lg-image">
@@ -82,16 +84,31 @@
                         <div class="sm-image"><img src="images/product/small-size/6.jpg" alt="product image thumb"></div>
                     </div>
                 </div>
+                <!--// Product Details Left -->--}}
+                <!-- Product Details Left -->
+                <div class="product-details-left">
+                    <div class="product-details-images slider-navigation-1">
+                        <div class="lg-image">
+                            <a class="popup-img venobox vbox-item" href="#" data-gall="myGallery">
+                                <img src="assets/img_product/{{$product->image}}" alt="{{$product->name}}">
+                            </a>
+                        </div>
+                        
+                    </div>
+                    <div class="product-details-thumbs slider-thumbs-1">
+                        <div class="sm-image"><img src="assets/img_product/{{$product->image}}" alt="{{$product->name}}"></div>
+                    </div>
+                </div>
                 <!--// Product Details Left -->
             </div>
 
             <div class="col-lg-7 col-md-6">
                 <div class="product-details-view-content pt-60">
                     <div class="product-info">
-                        <h2>Today is a good day Framed poster</h2>
-                        <span class="product-details-ref">Reference: demo_15</span>
+                        <h2>{{$product->name}}</h2>
+                        <span class="product-details-ref">số lượng snar phẩm bán ra + lượt xem</span>
                         <div class="rating-box pt-20">
-                            <ul class="rating rating-with-review-item">
+                            {{--<ul class="rating rating-with-review-item">
                                 <li><i class="fa fa-star-o"></i></li>
                                 <li><i class="fa fa-star-o"></i></li>
                                 <li><i class="fa fa-star-o"></i></li>
@@ -99,18 +116,23 @@
                                 <li class="no-star"><i class="fa fa-star-o"></i></li>
                                 <li class="review-item"><a href="#">Read Review</a></li>
                                 <li class="review-item"><a href="#">Write Review</a></li>
-                            </ul>
+                            </ul>--}}
                         </div>
                         <div class="price-box pt-20">
-                            <span class="new-price new-price-2">$57.98</span>
+                            @if($product->sale_price == 0)
+                            <span class="new-price new-price-2">{{$product->price}}</span>
+                            @else
+                            <span class="new-price new-price-2">{{$product->sale_price}}</span>
+                            <span class="new-price" style="font-size: 12px; color: lightgray;"><del>{{$product->price}}</del></span>
+                            @endif
                         </div>
                         <div class="product-desc">
                             <p>
-                                <span>100% cotton double printed dress. Black and white striped top and orange high waisted skater skirt bottom. Lorem ipsum dolor sit amet, consectetur adipisicing elit. quibusdam corporis, earum facilis et nostrum dolorum accusamus similique eveniet quia pariatur.
+                                <span>{{$product->short_description}}
                                 </span>
                             </p>
                         </div>
-                        <div class="product-variants">
+                        {{--<div class="product-variants">
                             <div class="produt-variants-size">
                                 <label>Dimension</label>
                                 <select class="nice-select">
@@ -119,13 +141,13 @@
                                     <option value="3" title="L">80x120cm</option>
                                 </select>
                             </div>
-                        </div>
+                        </div>--}}
                         <div class="single-add-to-cart">
-                            <form action="#" class="cart-quantity">
+                            <form action="{{route('add.to.cart', ['id_product' => $product->id])}}" class="cart-quantity">
                                 <div class="quantity">
                                     <label>Quantity</label>
                                     <div class="cart-plus-minus">
-                                        <input class="cart-plus-minus-box" value="1" type="text">
+                                        <input class="cart-plus-minus-box" name="quantity" value="1" type="text">
                                         <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                         <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                     </div>
@@ -144,34 +166,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="block-reassurance">
-                            <ul>
-                                <li>
-                                    <div class="reassurance-item">
-                                        <div class="reassurance-icon">
-                                            <i class="fa fa-check-square-o"></i>
-                                        </div>
-                                        <p>Security policy (edit with Customer reassurance module)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="reassurance-item">
-                                        <div class="reassurance-icon">
-                                            <i class="fa fa-truck"></i>
-                                        </div>
-                                        <p>Delivery policy (edit with Customer reassurance module)</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="reassurance-item">
-                                        <div class="reassurance-icon">
-                                            <i class="fa fa-exchange"></i>
-                                        </div>
-                                        <p> Return policy (edit with Customer reassurance module)</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                       
                     </div>
                 </div>
             </div> 
@@ -188,7 +183,7 @@
                     <ul class="nav li-product-menu">
                        <li><a class="active" data-toggle="tab" href="#description"><span>Description</span></a></li>
                        <li><a data-toggle="tab" href="#product-details"><span>Product Details</span></a></li>
-                       <li><a data-toggle="tab" href="#reviews"><span>Reviews</span></a></li>
+                       <!-- <li><a data-toggle="tab" href="#reviews"><span>Reviews</span></a></li> -->
                     </ul>               
                 </div>
                 <!-- Begin Li's Tab Menu Content Area -->
@@ -197,19 +192,20 @@
         <div class="tab-content">
             <div id="description" class="tab-pane active show" role="tabpanel">
                 <div class="product-description">
-                    <span>The best is yet to come! Give your walls a voice with a framed poster. This aesthethic, optimistic poster will look great in your desk or in an open-space office. Painted wooden frame with passe-partout for more depth.</span>
+                    <span>{!!$product->short_description!!}</span>
                 </div>
             </div>
             <div id="product-details" class="tab-pane" role="tabpanel">
                 <div class="product-details-manufacturer">
-                    <a href="#">
+                    {!!$product->full_description!!}
+                    <!-- <a href="#">
                         <img src="images/product-details/1.jpg" alt="Product Manufacturer Image">
                     </a>
                     <p><span>Reference</span> demo_7</p>
-                    <p><span>Reference</span> demo_7</p>
+                    <p><span>Reference</span> demo_7</p> -->
                 </div>
             </div>
-            <div id="reviews" class="tab-pane" role="tabpanel">
+            <!-- <div id="reviews" class="tab-pane" role="tabpanel">
                 <div class="product-reviews">
                     <div class="product-details-comment-block">
                         <div class="comment-review">
@@ -305,7 +301,7 @@
                         <!-- Quick View | Modal Area End Here -->
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -318,12 +314,60 @@
             <div class="col-lg-12">
                 <div class="li-section-title">
                     <h2>
-                        <span>15 other products in the same category:</span>
+                        <span>Sản phẩm tương tự</span>
                     </h2>
                 </div>
                 <div class="row">
                     <div class="product-active owl-carousel">
-                        <div class="col-lg-12">
+                        @foreach($list_product as $item)
+                            <div class="col-lg-12">
+                                <!-- single-product-wrap start -->
+                                <div class="single-product-wrap">
+                                    <div class="product-image">
+                                        @if($item->news == 1)
+                                            <span class="sticker">New</span>
+                                        @endif
+                                        @if($item->sale_price != 0)
+                                            <span class="sticker" style="left:5px !important; background-color: red !important;">Sale</span>
+                                        @endif
+                                        <a href="{{route('client.product.detail', ['slug' => $item->slug])}}">
+                                            <img src="assets/img_product/{{$item->image}}" alt="{{$item->name}}">
+                                        </a>
+                                    </div>
+                                    <div class="product_desc">
+                                        <div class="product_desc_info">
+                                            <div class="product-review">
+                                                <h5 class="manufacturer">
+                                                    <a href="#">Loại bánh</a>
+                                                </h5>
+                                                <div class="rating-box">
+                                                    <i class="fa fa-eye"></i>{{$item->count_view}}
+                                                </div>
+                                            </div>
+                                            <h4><a class="product_name" href="{{route('client.product.detail', ['slug' => $item->slug])}}">{{$item->name}}</a></h4>
+                                            @if($item->sale_price == 0)
+                                            <div class="price-box">
+                                                <span class="new-price">{{number_format($item->price)}}<sup>VND</sup> </span>
+                                            </div>
+                                            @else
+                                            <div class="price-box">
+                                                <span class="new-price new-price-2">{{number_format($item->sale_price)}}<sup>VND</sup> </span>
+                                                <span class="old-price">{{number_format($item->price)}}<sup> VND</sup></span>
+                                            </div>
+                                            @endif
+                                        </div>
+                                        <div class="add-actions">
+                                            <ul class="add-actions-link">
+                                                <li class="add-cart active" style="width:100%;"><a href="#">Add to cart</a></li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single-product-wrap end -->
+                            </div>
+                        @endforeach
+                        {{--<div class="col-lg-12">
                             <!-- single-product-wrap start -->
                             <div class="single-product-wrap">
                                 <div class="product-image">
@@ -574,7 +618,7 @@
                                 </div>
                             </div>
                             <!-- single-product-wrap end -->
-                        </div>
+                        </div>--}}
                     </div>
                 </div>
             </div>

@@ -1,17 +1,19 @@
 <div class="page-sidebar " id="main-menu">
     <!-- BEGIN MINI-PROFILE -->
     <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper">
+        @if(isset($user_admin))
         <div class="user-info-wrapper sm">
             <div class="profile-wrapper sm">
-                <img src="assets/img_user/anh.jpg" alt="" data-src="" data-src-retina="" width="69"
+                <img src="assets/img_user/{{$user_admin->image}}" alt="" data-src="" data-src-retina="" width="69"
                     height="69" />
                 <div class="availability-bubble online"></div>
             </div>
             <div class="user-info sm">
-                <div class="username"><span class="semi-bold">Tên Tài khoản</span></div>
+                <div class="username"><span class="semi-bold" style="color:white;">{{$user_admin->name}}</span></div>
                 <div class="status">Quyền hạn truy cập</div>
             </div>
         </div>
+        @endif
         <!-- END MINI-PROFILE -->
         <!-- BEGIN SIDEBAR MENU -->
         <p></p>
@@ -32,14 +34,14 @@
             
              --}}
             {{-- Đơn hàng --}}
-            <li class="start  open "> <a href="#"><i
+            <li class="start  open "> <a href="{{route('order.list')}}"><i
                         class="material-icons">shopping_cart</i> <span class="title">Đơn hàng</span> <span
                         class="selected"></span> <span class="arrow  open "></span>
                 </a>
-                <ul class="sub-menu">
+                <!-- <ul class="sub-menu">
                     <li> <a href="#"> Đơn mới </a> </li>
                     <li> <a href="#"> Đơn đã xử lý </a> </li>
-                </ul>
+                </ul> -->
             </li>
             
             {{-- product --}}

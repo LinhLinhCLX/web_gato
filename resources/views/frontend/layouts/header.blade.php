@@ -82,7 +82,10 @@
                     <form action="#" class="hm-searchbox">
                         <select class="nice-select select-search-category">
                             <option value="0">All</option>
-                            <option value="10">Bánh Sinh nhật</option>
+
+                            @foreach($menu_cate_product as $item)
+                            <a href="{{route('client.blog.list.cate_blog', ['slug'=> $item->slug])}}" title="{{$item->name}}"><option value="{{$item->id}}"><a href="{{route('client.blog.list.cate_blog', ['slug'=> $item->slug])}}" title="{{$item->name}}"></a>{{$item->name}}</option></a>
+                            @endforeach
                         </select>
                         <input type="text" placeholder="Tìm kiếm tên bánh ...">
                         <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
@@ -103,45 +106,40 @@
                             <li class="hm-minicart">
                                 <div class="hm-minicart-trigger">
                                     <span class="item-icon"></span>
-                                    <span class="item-text">£80.00
-                                        <span class="cart-item-count">2</span>
+                                    <span class="item-text"> {{number_format($totalPrice)}} VND
+                                        <span class="cart-item-count">{{$cartTotalQuantity}}</span>
                                     </span>
                                 </div>
                                 <span></span>
                                 <div class="minicart">
                                     <ul class="minicart-product-list">
+                                        @foreach($carts as $cart)
+                                            {{--$cart->attributes->image--}}
                                         <li>
-                                            <a href="single-product.html" class="minicart-product-image">
-                                                <img src="images/product/small-size/5.jpg" alt="cart products">
+                                            <a href="{{route('client.product.detail', ['slug'=>$cart->attributes->slug])}}" class="minicart-product-image">
+                                                <img src="assets/img_product/{{$cart->attributes->image}}" alt="{{$cart->name}}">
                                             </a>
                                             <div class="minicart-product-details">
-                                                <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                <span>£40 x 1</span>
+                                                <h6><a href="single-product.html">{{$cart->name}}</a></h6>
+                                                <span>{{number_format($cart->price)}} x {{$cart->quantity}}</span>
                                             </div>
-                                            <button class="close" title="Remove">
-                                                <i class="fa fa-close"></i>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <a href="single-product.html" class="minicart-product-image">
-                                                <img src="images/product/small-size/6.jpg" alt="cart products">
+                                            <a href="{{route('delete.to.cart', ['id_product' => $cart->id])}}">
+                                                <button class="close" title="Remove">
+                                                    <i class="fa fa-close"></i>
+                                                </button>
                                             </a>
-                                            <div class="minicart-product-details">
-                                                <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                <span>£40 x 1</span>
-                                            </div>
-                                            <button class="close" title="Remove">
-                                                <i class="fa fa-close"></i>
-                                            </button>
+                                            
                                         </li>
+                                        @endforeach
+                                        
                                     </ul>
-                                    <p class="minicart-total">SUBTOTAL: <span>£80.00</span></p>
+                                    <p class="minicart-total">Tổng tiền: <span>{{number_format($totalPrice)}}</span></p>
                                     <div class="minicart-button">
-                                        <a href="shopping-cart.html" class="li-button li-button-fullwidth li-button-dark">
-                                            <span>View Full Cart</span>
+                                        <a href="{{route('details.cart')}}" class="li-button li-button-fullwidth li-button-dark">
+                                            <span>Chi tiết Giỏ hàng</span>
                                         </a>
-                                        <a href="checkout.html" class="li-button li-button-fullwidth">
-                                            <span>Checkout</span>
+                                        <a href="{{route('check.out')}}" class="li-button li-button-fullwidth">
+                                            <span>Thanh toán</span>
                                         </a>
                                     </div>
                                 </div>
@@ -287,30 +285,38 @@
                             </ul>--}}
                             <ul>
                                 <li><a href="{{route('home')}}">Home</a></li>
-                                <li class="dropdown-holder"><a href="#"  class="menu-top-down">Danh mục sản phẩm</a>
+                                {{--@foreach($menu_cate_menu as $cate_menu)
+                                <li class="dropdown-holder"><a href="#"  class="menu-top-down">{{$cate_menu->name}}</a>
                                     <ul class="hb-dropdown">
-                                        <li>
-                                            <a href="#">Bánh sinh nhật</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Bánh hoạt hình</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Bánh kem</a>
-                                        </li>
+                                    @foreach($menu_cate_product as $cate_product)
+                                        @if($cate_product->id_cate_menu == $cate_menu->id)
+                                            <li><a href="{{route('client.product.list.cate_product', ['slug'=> $cate_product->slug])}}">{{$cate_product->name}}</a></li>
+                                        @endif
+                                    @endforeach
+                                    </ul>
+                                    <ul class="hb-dropdown">
+                                    @foreach($menu_cate_blog as $cate_blog)
+                                        
+                                        @if($cate_blog->id_cate_menu == $cate_menu->id)
+                                            <li><a href="{{route('client.blog.list.cate_blog', ['slug'=> $cate_blog->slug])}}">{{$cate_blog->name}}</a></li>
+                                        @endif
+                                        
+                                    @endforeach
+                                    </ul>
+                                </li>
+                                @endforeach--}}
+                                {{----}}<li class="dropdown-holder"><a href="#"  class="menu-top-down">Danh mục sản phẩm</a>
+                                    <ul class="hb-dropdown">
+                                        @foreach($menu_cate_product as $cate_product)
+                                            <li><a href="{{route('client.product.list.cate_product', ['slug'=> $cate_product->slug])}}">{{$cate_product->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li class="dropdown-holder"><a href="blog-left-sidebar.html"  class="menu-top-down">Bài viết</a>
                                     <ul class="hb-dropdown">
-                                        <li class="">
-                                            <a href="#">Vào bếp</a>
-                                        </li>
-                                        <li class="r">
-                                            <a href="#">Nguyên liệu</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="#">Làm Bánh</a>
-                                        </li>
+                                        @foreach($menu_cate_blog as $cate_blog)
+                                            <li><a href="{{route('client.blog.list.cate_blog', ['slug'=> $cate_blog->slug])}}">{{$cate_blog->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li><a href="#">Liên Hệ</a></li>

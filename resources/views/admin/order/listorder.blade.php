@@ -32,7 +32,7 @@
     </div>
 </div>
 <h1>Danh sách đơn hàng</h1>
-{{--
+{{----}}
 <div class="row-fluid">
     <div class="span12">
         <div class="grid simple ">
@@ -40,23 +40,23 @@
                 <table class="table table-striped table-bordered" id="example">
                     <thead>
                         <tr>
-                            <th>Mã chủ đề bài viết</th>
-                            <th class="col-md-2">Tên chủ đề bài viết</th>
-                            <th> Số hiển trên menu</th>
+                            <th>Mã đơn hàng</th>
+                            <th class="col-md-2">Giá trị đơn hàng</th>
+                            <th>Mã khách hàng</th>
                             <th>Trạng thái</th>
                             <th>Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($list_cate_menu as $item)
+                    @foreach($list_order as $item)
                         <tr class="odd gradeX">
                             <td>{{$item->id}}</td>
-                            <td>{{$item->name}}</td>
-                            <td>{{$item->number_order}}</td>
-                            <td>{{$item->active}}</td>
+                            <td>{{$item->sub_total_pay}}</td>
+                            <td>{{$item->id_user}}</td>
+                            <td>{{$item->status}}</td>
                             <td class="center">
-                                <a href="{{route('cate_menu.edit', ['id_cate_menu' => $item->id])}}"  ><button class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"> </i></button></a>
-                                <a href="{{route('cate_menu.delete', ['id_cate_menu' => $item->id])}}" onclick="return confirm('Hành động sẽ xóa menu này này! bạn có muốn tiếp tục?')" ><button class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"> </i></button></a>
+                                <a href="{{route('order.details', ['id_order' => $item->id])}}"  ><button class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"> </i>Chi tiết đơn hàng</button></a>
+                                <!-- <a href="{{route('cate_menu.delete', ['id_cate_menu' => $item->id])}}" onclick="return confirm('Hành động sẽ xóa menu này này! bạn có muốn tiếp tục?')" ><button class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"> </i></button></a> -->
                             </td>
                         </tr>
                     @endforeach
@@ -66,5 +66,5 @@
         </div>
     </div>
 </div>
---}}
+
 @endsection
