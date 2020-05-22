@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
 use DB;
-class AdminController extends Controller
+class AdminController extends HomeController
 {
+    
     public function index()
     {
     	return view('admin.index');

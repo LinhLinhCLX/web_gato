@@ -71,7 +71,7 @@
             <div class="footer-logo-wrap pt-50 pb-35">
                 <div class="row">
                     <!-- Begin Footer Logo Area -->
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-3 col-md-4">
                         <div class="footer-logo">
                             <img src="assets/logo_01_03.png" alt="Footer Logo" height="80px" width="80px">
                             {{--<p class="info">
@@ -95,13 +95,23 @@
                     </div>
                     <!-- Footer Logo Area End Here -->
                     <!-- Begin Footer Block Area -->
-                    <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="col-lg-3 col-md-4 col-sm-12">
                         <div class="footer-block">
                             <h3 class="footer-block-title">Danh mục sản phẩm</h3>
                             <ul>
-                                <li><a href="#">Bánh sinh nhật</a></li>
-                                <li><a href="#">Bánh hoạt hình</a></li>
-                                <li><a href="#">Bánh kem</a></li>
+                                @foreach($menu_cate_product as $item)
+                                <li><a href="{{route('client.product.list.cate_product', ['slug'=> $item->slug])}}">{{$item->name}}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class="footer-block">
+                            <h3 class="footer-block-title">Danh mục Bài viết</h3>
+                            <ul>
+                                @foreach($menu_cate_blog as $item)
+                                <li><a href="{{route('client.blog.list.cate_blog', ['slug'=> $item->slug])}}">{{$item->name}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -121,7 +131,7 @@
                     <!-- Footer Block Area End Here -->
                     --}}
                     <!-- Begin Footer Block Area -->
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <div class="footer-block">
                             <h3 class="footer-block-title">Follow Us</h3>
                             <ul class="social-link">

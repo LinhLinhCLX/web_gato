@@ -6,43 +6,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 
-class ProductController extends Controller
+class ProductController extends HomeController
 {
-	
+    public function __construct()
+    {
+
+        parent::__construct();
+
+    }
     public function index()
     {
-    	//route client\HomeController@index
-    	// $dataView['list_product'] = DB::table('product')->get();
-    	// $dataView['list_product_best_sale'] = DB::table('product')->where([
-     //   		['active', '=', '1'],
-     //   		['count_sale', '>', '10'],
-     //   	])->get();
-    	// $dataView['list_product_best_view'] = DB::table('product')->where([
-     //   		['active', '=', '1'],
-     //   		['view', '>', '10'],
-     //   	])->get();
-    	// $dataView['list_product_sale_price'] = DB::table('product')->where([
-     //   		['active', '=', '1'],
-     //   		['sale_price', '!=', '0'],
-     //   	])->get();
-    	// // $dataView['list_product_hot'] = null;
-    	// $dataView['list_product_news'] = DB::table('product')->where([
-     //   		['active', '=', '1'],
-     //   		['news', '=', '1'],
-     //   	])->get();
-    	// // $dataView['list_product_'] = null;
-    	// // $dataView['list_blog_'] = null;
-    	// $dataView['list_blog_new'] = DB::table('blog')->where([
-     //   		['active', '=', '1'],
-     //   		// ['', '=', $slug],
-     //   	])->get();
-    	// $dataView['list_blog_best_view'] = DB::table('blog')->where([
-     //   		['active', '=', '1'],
-     //   		['view', '>=', 10],
-     //   	])->get();
-    	// $dataView['list_blog_hot'] = null;
-    	// dd($dataView);
-    	return view('frontend.index', $dataView);
+    	return redirect()->route('home');
     }
     public function getListProduct()
     {
@@ -54,8 +28,13 @@ class ProductController extends Controller
     	// dd($dataView);
     	return view('frontend.product.listproduct', $dataView);
     }
-    public function getProductDetail($slug)
+    public function getProductDetail($slug, Request $request)
     {
+    	// dd($request->slug);
+    	if(!$request->session()->has($request->slug))
+        {
+            DB::table('product')->where('slug',$request->slug)->increment('count_view',1);
+        }
     	// echo'getProductDetail '.$slug;
     	$dataView['cate_product'] = DB::table('cate_product')->where([
        		['active', '=', '1'],
@@ -64,10 +43,10 @@ class ProductController extends Controller
     	$dataView['product'] = DB::table('product')->where([
        		['active', '=', '1'],
        		['slug', '=', $slug],
-       	])->get();
+       	])->first();
        	$dataView['list_product'] = DB::table('product')->where([
        		['active', '=', '1'],
-       		['id_cate_product', '=', $dataView['cate_product']->id],
+       		['id_cate_product', '=', $dataView['product']->id_cate_product],
        	])->get();
     	// dd($dataView);
     	return view('frontend.product.detailproduct', $dataView);

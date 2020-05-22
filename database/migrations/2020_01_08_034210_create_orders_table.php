@@ -19,9 +19,9 @@ class CreateOrdersTable extends Migration
             $table->foreign('id_user')->references('id')->on('users');
             $table->integer('status')->default(1);//là id trạng thái, trạng thái của đơn hàng
             $table->text('time_receipt')->nullable();//thowif gian nhaanj hangf
-            $table->float('sub_total')->unsigned(); // tổng hóa đơn khi chưa discount
+            $table->float('sub_total'); // tổng hóa đơn khi chưa discount
             $table->string('title_cake')->nullable();
-            $table->float('sub_total_pay')->unsigned();// tổng hóa đơn trước discount
+            $table->float('sub_total_pay');// tổng hóa đơn sau discount
             $table->timestamps();
         });
     }

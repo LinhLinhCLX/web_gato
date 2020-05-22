@@ -89,7 +89,7 @@
                                         @if($item->sale_price != 0)
                                             <span class="sticker" style="left:5px !important; background-color: red !important;">Sale</span>
                                         @endif
-                                        <a href="#">
+                                        <a href="{{route('client.product.detail', ['slug' => $item->slug])}}">
                                             <img src="assets/img_product/{{$item->image}}" alt="{{$item->name}}">
                                         </a>
                                     </div>
@@ -118,7 +118,7 @@
                                         </div>
                                         <div class="add-actions">
                                             <ul class="add-actions-link">
-                                                <li class="add-cart active" style="width:100%;"><a href="#">Add to cart</a></li>
+                                                <li class="add-cart active" style="width:100%;"><a href="{{route('add.to.cart', ['id_product' => $item->id])}}">Add to cart</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -144,7 +144,7 @@
                                         @if($item->sale_price != 0)
                                             <span class="sticker" style="left:5px !important; background-color: red !important;">Sale</span>
                                         @endif
-                                        <a href="#">
+                                        <a href="{{route('client.product.detail', ['slug' => $item->slug])}}">
                                             <img src="assets/img_product/{{$item->image}}" alt="{{$item->name}}">
                                         </a>
                                     </div>
@@ -158,7 +158,7 @@
                                                     <i class="fa fa-eye"></i>{{$item->count_view}}
                                                 </div>
                                             </div>
-                                            <h4><a class="product_name" href="#">{{$item->name}}</a></h4>
+                                            <h4><a class="product_name" href="{{route('client.product.detail', ['slug' => $item->slug])}}">{{$item->name}}</a></h4>
                                             @if($item->sale_price == 0)
                                             <div class="price-box">
                                                 <span class="new-price">{{number_format($item->price)}}<sup>VND</sup> </span>
@@ -173,7 +173,7 @@
                                         </div>
                                         <div class="add-actions">
                                             <ul class="add-actions-link">
-                                                <li class="add-cart active" style="width:100%;"><a href="#">Add to cart</a></li>
+                                                <li class="add-cart active" style="width:100%;"><a href="{{route('add.to.cart', ['id_product' => $item->id])}}">Add to cart</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -454,7 +454,7 @@
                                         @if($item->sale_price != 0)
                                             <span class="sticker" style="left:5px !important; background-color: red !important;">Sale</span>
                                         @endif
-                                        <a href="#">
+                                        <a href="{{route('client.product.detail', ['slug' => $item->slug])}}">
                                             <img src="assets/img_product/{{$item->image}}" alt="{{$item->name}}">
                                         </a>
                                     </div>
@@ -469,7 +469,7 @@
                                                     <i class="fa fa-eye"></i>{{$item->count_view}}
                                                 </div>
                                             </div>
-                                            <h4><a class="product_name" href="#">{{$item->name}}</a></h4>
+                                            <h4><a class="product_name" href="{{route('client.product.detail', ['slug' => $item->slug])}}">{{$item->name}}</a></h4>
                                             @if($item->sale_price == 0)
                                             <div class="price-box">
                                                 <span class="new-price">{{number_format($item->price)}}<sup>VND</sup> </span>
@@ -484,7 +484,7 @@
                                         </div>
                                         <div class="add-actions">
                                             <ul class="add-actions-link">
-                                                <li class="add-cart active" style="width:100%;"><a href="#">Add to cart</a></li>
+                                                <li class="add-cart active" style="width:100%;"><a href="{{route('add.to.cart', ['id_product' => $item->id])}}">Add to cart</a></li>
                                                 
                                             </ul>
                                         </div>
@@ -764,7 +764,8 @@
                 <div class="col-lg-4 col-md-4 text-center pt-xs-30">
                     <div class="single-banner">
                         <a href="#">
-                            <img src="https://www.keuchenparadise.com/image/cache/catalog/banner3-755x329.jpg" alt="Bánh kem tình yêu">
+                            <!-- <img src="https://www.keuchenparadise.com/image/cache/catalog/banner3-755x329.jpg" alt="Bánh kem tình yêu"> -->
+                            <img src="https://customercareaddress.com/wp-content/uploads/2019/10/National-Chocolate-Cupcake-Day.jpg" alt="Bánh kem tình yêu">
                         </a>
                     </div>
                 </div>
@@ -815,7 +816,7 @@
                                         @if($item->sale_price != 0)
                                             <span class="sticker" style="left:5px !important; background-color: red !important;">Sale</span>
                                         @endif
-                                        <a href="#">
+                                        <a href="{{route('client.product.detail', ['slug' => $item->slug])}}">
                                             <img src="assets/img_product/{{$item->image}}" alt="{{$item->name}}">
                                         </a>
                                     </div>
@@ -829,7 +830,7 @@
                                                     <i class="fa fa-eye"></i>{{$item->count_view}}
                                                 </div>
                                             </div>
-                                            <h4><a class="product_name" href="#">{{$item->name}}</a></h4>
+                                            <h4><a class="product_name" href="{{route('client.product.detail', ['slug' => $item->slug])}}">{{$item->name}}</a></h4>
                                             @if($item->sale_price == 0)
                                             <div class="price-box">
                                                 <span class="new-price">{{number_format($item->price)}}<sup>VND</sup> </span>
@@ -844,7 +845,7 @@
                                         </div>
                                         <div class="add-actions">
                                             <ul class="add-actions-link">
-                                                <li class="add-cart active" style="width:100%;"><a href="#">Add to cart</a></li>
+                                                <li class="add-cart active" style="width:100%;"><a href="{{route('add.to.cart', ['id_product' => $item->id])}}">Add to cart</a></li>
                                                 
                                             </ul>
                                         </div>
@@ -889,7 +890,7 @@
                                         </div>
                                         <div class="add-actions">
                                             <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#">Add to cart</a></li>
+                                                <li class="add-cart active"><a href="">Add to cart</a></li>
                                                 <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                                                 <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                             </ul>
@@ -1141,7 +1142,7 @@
                                         @if($item->sale_price != 0)
                                             <span class="sticker" style="left:5px !important; background-color: red !important;">Sale</span>
                                         @endif
-                                        <a href="#">
+                                        <a href="{{route('client.product.detail', ['slug' => $item->slug])}}">
                                             <img src="assets/img_product/{{$item->image}}" alt="{{$item->name}}">
                                         </a>
                                     </div>
@@ -1155,7 +1156,7 @@
                                                     <i class="fa fa-eye"></i>{{$item->count_view}}
                                                 </div>
                                             </div>
-                                            <h4><a class="product_name" href="#">{{$item->name}}</a></h4>
+                                            <h4><a class="product_name" href="{{route('client.product.detail', ['slug' => $item->slug])}}">{{$item->name}}</a></h4>
                                             @if($item->sale_price == 0)
                                             <div class="price-box">
                                                 <span class="new-price">{{number_format($item->price)}}<sup>VND</sup> </span>
@@ -1170,7 +1171,7 @@
                                         </div>
                                         <div class="add-actions">
                                             <ul class="add-actions-link">
-                                                <li class="add-cart active" style="width:100%;"><a href="#">Add to cart</a></li>
+                                                <li class="add-cart active" style="width:100%;"><a href="{{route('add.to.cart', ['id_product' => $item->id])}}">Add to cart</a></li>
                                                 {{--<li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                                                 <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 --}}
@@ -1469,7 +1470,7 @@
                                         @if($item->sale_price != 0)
                                             <span class="sticker" style="left:5px !important; background-color: red !important;">Sale</span>
                                         @endif
-                                        <a href="#">
+                                        <a href="{{route('client.product.detail', ['slug' => $item->slug])}}">
                                             <img src="assets/img_product/{{$item->image}}" alt="{{$item->name}}">
                                         </a>
                                     </div>
@@ -1483,7 +1484,7 @@
                                                     <i class="fa fa-eye"></i>{{$item->count_view}}
                                                 </div>
                                             </div>
-                                            <h4><a class="product_name" href="#">{{$item->name}}</a></h4>
+                                            <h4><a class="product_name" href="{{route('client.product.detail', ['slug' => $item->slug])}}">{{$item->name}}</a></h4>
                                             @if($item->sale_price == 0)
                                             <div class="price-box">
                                                 <span class="new-price">{{number_format($item->price)}}<sup>VND</sup> </span>
@@ -1498,7 +1499,7 @@
                                         </div>
                                         <div class="add-actions">
                                             <ul class="add-actions-link">
-                                                <li class="add-cart active" style="width:100%;"><a href="#">Add to cart</a></li>
+                                                <li class="add-cart active" style="width:100%;"><a href="{{route('add.to.cart', ['id_product' => $item->id])}}">Add to cart</a></li>
                                                 
                                             </ul>
                                         </div>
@@ -1534,7 +1535,7 @@
                             <span> 280 000đ</span>
                         </p>
                         <div class="default-btn">
-                            <a href="shop-left-sidebar.html" class="links">Đặt hàng</a>
+                            <a href="#" class="links">Đặt hàng</a>
                         </div>
                     </div>
                     <!-- Li's Static Home Content Area End Here -->
@@ -1558,7 +1559,7 @@
                         </div>
                         <div class="featured-product-active-2 owl-carousel">
                             <div class="featured-product-bundle">
-                                <div class="row">
+                                {{--<div class="row">
                                     <div class="group-featured-pro-wrapper">
                                         <div class="product-img">
                                             <a href="#chitietbaiviet">
@@ -1566,7 +1567,21 @@
                                             </a>
                                         </div>
                                         <div class="featured-pro-content">
-                                            {{--<div class="product-review">
+                                            <h4><a class="featured-product-name" href="#">Tiêu đề bài viết</a></h4>
+                                            <div class="li-blog-meta">
+                                                <p class="manufacturer">
+                                                     <i class="fa fa-user"></i> Admin 
+                                                    <i class="fa fa-calendar"></i> 25 nov 2018
+                                                    <i class="fa fa-eye"></i>134 view
+                                                </p>
+                                            </div>
+                                            <div class="product-review">
+                                                <p>
+                                                    Tóm tắt bài viết Tóm tắt bài viết  Tóm tắt bài viết
+                                                </p>
+                                                <!-- <a class="author" href="#">Xem tiếp...</a> -->
+                                            </div>
+                                            <div class="product-review">
                                                 <h5 class="manufacturer">
                                                     <a href="product-details.html">Studio Design</a>
                                                 </h5>
@@ -1585,8 +1600,8 @@
                                                 </div>
                                             <div class="featured-price-box">
                                                 <span class="new-price">$71.80</span>
-                                            </div>--}}
-                                            {{--<h4><a class="featured-product-name" href="#">Tiêu đề bài viết</a></h4>
+                                            </div>
+                                            <h4><a class="featured-product-name" href="#">Tiêu đề bài viết</a></h4>
                                             <div class="li-blog-meta">
                                                 <p class="manufacturer">
                                                      <i class="fa fa-user"></i> Admin 
@@ -1598,49 +1613,39 @@
                                                     Tóm tắt bài viết Tóm tắt bài viết  Tóm tắt bài viết
                                                 </p>
                                                 <a class="author" href="#">Xem tiếp...</a>
-                                            </div>--}}
-                                            <h4><a class="featured-product-name" href="#">Tiêu đề bài viết</a></h4>
-                                            <div class="li-blog-meta">
-                                                <p class="manufacturer">
-                                                     <i class="fa fa-user"></i> Admin 
-                                                    <i class="fa fa-calendar"></i> 25 nov 2018
-                                                    <i class="fa fa-eye"></i>134 view
-                                                </p>
                                             </div>
-                                            <div class="product-review">
-                                                <p>
-                                                    Tóm tắt bài viết Tóm tắt bài viết  Tóm tắt bài viết
-                                                </p>
-                                                <!-- <a class="author" href="#">Xem tiếp...</a> -->
-                                            </div>
+                                            
                                         </div>
                                     </div>
-                                </div>
+                                </div>--}}
+                                @foreach($list_blog_new as $item)
                                 <div class="row">
                                     <div class="group-featured-pro-wrapper">
                                         <div class="product-img">
-                                            <a href="#chitietbaiviet">
-                                                <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHdzxoRj84h5wx7A-Yhb07pthI1_Bp6FtMhGfV482-Y36HLzh&s">
+                                            <a href="{{route('client.blog.detail', ['slug' =>$item->slug])}}">
+                                                <!-- <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHdzxoRj84h5wx7A-Yhb07pthI1_Bp6FtMhGfV482-Y36HLzh&s"> -->
+                                                <img alt="{{$item->name}}" src="assets/img_blog/{{$item->image}}">
                                             </a>
                                         </div>
                                         <div class="featured-pro-content">
-                                            <h4><a class="featured-product-name" href="#">Tiêu đề bài viết</a></h4>
+                                            <h4><a class="featured-product-name" href="{{route('client.blog.detail', ['slug' =>$item->slug])}}">{{$item->name}}</a></h4>
                                             <div class="li-blog-meta">
                                                 <p class="manufacturer">
                                                      <i class="fa fa-user"></i> Admin 
-                                                    <i class="fa fa-calendar"></i> 25 nov 2018
-                                                    <i class="fa fa-eye"></i>134 view
+                                                    <i class="fa fa-calendar"></i> {{$item->created_at}}
+                                                    <i class="fa fa-eye"></i>{{$item->count_view}}
                                                 </p>
                                             </div>
                                             <div class="product-review">
                                                 <p>
-                                                    Tóm tắt bài viết Tóm tắt bài viết  Tóm tắt bài viết
+                                                    {{$item->short_description}}
                                                 </p>
                                                 <!-- <a class="author" href="#">Xem tiếp...</a> -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -1656,56 +1661,34 @@
                         </div>
                         <div class="featured-product-active-2 owl-carousel">
                             <div class="featured-product-bundle">
+                                @foreach($list_blog_best_view as $item)
                                 <div class="row">
                                     <div class="group-featured-pro-wrapper">
                                         <div class="product-img">
-                                            <a href="#chitietbaiviet">
-                                                <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHdzxoRj84h5wx7A-Yhb07pthI1_Bp6FtMhGfV482-Y36HLzh&s">
+                                            <a href="{{route('client.blog.detail', ['slug' =>$item->slug])}}">
+                                                <!-- <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHdzxoRj84h5wx7A-Yhb07pthI1_Bp6FtMhGfV482-Y36HLzh&s"> -->
+                                                <img alt="{{$item->name}}" src="assets/img_blog/{{$item->image}}">
                                             </a>
                                         </div>
                                         <div class="featured-pro-content">
-                                            <h4><a class="featured-product-name" href="#">Tiêu đề bài viết</a></h4>
+                                            <h4><a class="featured-product-name" href="{{route('client.blog.detail', ['slug' =>$item->slug])}}">{{$item->name}}</a></h4>
                                             <div class="li-blog-meta">
                                                 <p class="manufacturer">
                                                      <i class="fa fa-user"></i> Admin 
-                                                    <i class="fa fa-calendar"></i> 25 nov 2018
-                                                    <i class="fa fa-eye"></i>134 view
+                                                    <i class="fa fa-calendar"></i> {{$item->created_at}}
+                                                    <i class="fa fa-eye"></i>{{$item->count_view}}
                                                 </p>
                                             </div>
                                             <div class="product-review">
                                                 <p>
-                                                    Tóm tắt bài viết Tóm tắt bài viết  Tóm tắt bài viết
+                                                    {{$item->short_description}}
                                                 </p>
                                                 <!-- <a class="author" href="#">Xem tiếp...</a> -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="group-featured-pro-wrapper">
-                                        <div class="product-img">
-                                            <a href="#chitietbaiviet">
-                                                <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHdzxoRj84h5wx7A-Yhb07pthI1_Bp6FtMhGfV482-Y36HLzh&s">
-                                            </a>
-                                        </div>
-                                        <div class="featured-pro-content">
-                                            <h4><a class="featured-product-name" href="#">Tiêu đề bài viết</a></h4>
-                                            <div class="li-blog-meta">
-                                                <p class="manufacturer">
-                                                     <i class="fa fa-user"></i> Admin 
-                                                    <i class="fa fa-calendar"></i> 25 nov 2018
-                                                    <i class="fa fa-eye"></i>134 view
-                                                </p>
-                                            </div>
-                                            <div class="product-review">
-                                                <p>
-                                                    Tóm tắt bài viết Tóm tắt bài viết  Tóm tắt bài viết
-                                                </p>
-                                                <!-- <a class="author" href="#">Xem tiếp...</a> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -1721,56 +1704,34 @@
                         </div>
                         <div class="featured-product-active-2 owl-carousel">
                             <div class="featured-product-bundle">
+                                @foreach($list_blog_new as $item)
                                 <div class="row">
                                     <div class="group-featured-pro-wrapper">
                                         <div class="product-img">
-                                            <a href="#chitietbaiviet">
-                                                <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHdzxoRj84h5wx7A-Yhb07pthI1_Bp6FtMhGfV482-Y36HLzh&s">
+                                            <a href="{{route('client.blog.detail', ['slug' =>$item->slug])}}">
+                                                <!-- <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHdzxoRj84h5wx7A-Yhb07pthI1_Bp6FtMhGfV482-Y36HLzh&s"> -->
+                                                <img alt="{{$item->name}}" src="assets/img_blog/{{$item->image}}">
                                             </a>
                                         </div>
                                         <div class="featured-pro-content">
-                                            <h4><a class="featured-product-name" href="#">Tiêu đề bài viết</a></h4>
+                                            <h4><a class="featured-product-name" href="{{route('client.blog.detail', ['slug' =>$item->slug])}}">{{$item->name}}</a></h4>
                                             <div class="li-blog-meta">
                                                 <p class="manufacturer">
                                                      <i class="fa fa-user"></i> Admin 
-                                                    <i class="fa fa-calendar"></i> 25 nov 2018
-                                                    <i class="fa fa-eye"></i>134 view
+                                                    <i class="fa fa-calendar"></i> {{$item->created_at}}
+                                                    <i class="fa fa-eye"></i>{{$item->count_view}}
                                                 </p>
                                             </div>
                                             <div class="product-review">
                                                 <p>
-                                                    Tóm tắt bài viết Tóm tắt bài viết  Tóm tắt bài viết
+                                                    {{$item->short_description}}
                                                 </p>
                                                 <!-- <a class="author" href="#">Xem tiếp...</a> -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="group-featured-pro-wrapper">
-                                        <div class="product-img">
-                                            <a href="#chitietbaiviet">
-                                                <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHdzxoRj84h5wx7A-Yhb07pthI1_Bp6FtMhGfV482-Y36HLzh&s">
-                                            </a>
-                                        </div>
-                                        <div class="featured-pro-content">
-                                            <h4><a class="featured-product-name" href="#">Tiêu đề bài viết</a></h4>
-                                            <div class="li-blog-meta">
-                                                <p class="manufacturer">
-                                                     <i class="fa fa-user"></i> Admin 
-                                                    <i class="fa fa-calendar"></i> 25 nov 2018
-                                                    <i class="fa fa-eye"></i>134 view
-                                                </p>
-                                            </div>
-                                            <div class="product-review">
-                                                <p>
-                                                    Tóm tắt bài viết Tóm tắt bài viết  Tóm tắt bài viết
-                                                </p>
-                                                <!-- <a class="author" href="#">Xem tiếp...</a> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

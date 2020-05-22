@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\client;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\client\CartController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Database\Query\Builder;
+use Darryldecode\Cart\CartCollection;
 use App\Product;
 use App\Cate_product;
 use App\Cate_blog;
@@ -18,23 +21,20 @@ class HomeController extends Controller
 {
     public function __construct()
     {
-    	$viewData['list_product'] = Product::all();
-    	$viewData['list_cate_product'] = Cate_product::all();
-    	$viewData['list_cate_menu'] = Cate_menu::all();
-    	$viewData['list_cate_blog'] = Cate_blog::all();
-    	$viewData['list_slider'] = Slider::all();
+    	// $dataView['list_product'] = Product::all();
+        // parent::__construct();
+    	$dataView['menu_cate_product'] = Cate_product::all();
+    	$dataView['menu_cate_menu'] = DB::table('cate_menu')->orderBy('number_order', 'ASC')->get();
+    	$dataView['menu_cate_blog'] = Cate_blog::all();
+    	$dataView['menu_slider'] = Slider::all();
+        // dd(\CartCollection::get());
+        view()->share($dataView);
 
-    	View::Share($viewData);
+        // dd($dataView['cart']);
 
     }
     public function index()
     {
-    	// $viewData['list_product'] = DB::table('product')->get();
-    	// $viewData['list_cate_product'] = Cate_product::all();
-    	// $viewData['list_cate_menu'] = Cate_menu::all();
-    	// $viewData['list_cate_blog'] = Cate_blog::all();
-    	// $viewData['list_slider'] = Slider::all();
-    	// dd($viewData);
         $dataView['list_product'] = DB::table('product')->get();
         $dataView['list_product_best_sale'] = DB::table('product')->where([
             ['active', '=', '1'],

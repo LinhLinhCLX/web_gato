@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Model' => 'App\Policies\ModelPolicy',
     ];
 
     /**
@@ -23,8 +23,21 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->registerPolicies();
-
+        //Admin
+        //1:Quản trị
+        // $this->registerPolicies();
+        // Gate::before(function($user) {
+        //     if($user->level == '1') {
+        //         return true;
+        //     }
+        //     else{
+        //         return view('errors.404');
+        //     }
+        // });
+        Gate::define('admin',function($user){
+            return $user->level==1;
+        });
+        // $role=['1','2','3'];
         //
     }
 }

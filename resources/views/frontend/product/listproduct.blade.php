@@ -137,7 +137,7 @@
                                                             <a href="{{route('client.product.detail', ['slug'=>$item->slug])}}">{{$item->name}}</a>
                                                         </h5>
                                                     </div>
-                                                    <h4><a class="product_name" href="single-product.html">{{$item->name}}</a></h4>
+                                                    <h4><a class="product_name" href="{{route('client.product.detail', ['slug' => $item->slug])}}">{{$item->name}}</a></h4>
                                                     @if($item->sale_price == 0)
                                                     <div class="price-box">
                                                         <span class="new-price">{{number_format($item->price)}}<sup>VND</sup> </span>
@@ -152,7 +152,7 @@
                                                 </div>
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
-                                                        <li class="add-cart active" style="width:100%;"><a href="#">Thêm vào giỏ hàng</a></li>
+                                                        <li class="add-cart active" style="width:100%;"><a href="{{route('add.to.cart', ['id_product' => $item->id])}}">Thêm vào giỏ hàng</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -711,34 +711,40 @@
                 <!--sidebar-categores-box start  -->
                 <div class="sidebar-categores-box mt-sm-30 mt-xs-30">
                     <div class="sidebar-title">
-                        <h2>Laptop</h2>
+                        <h2>Cửa hàng</h2>
                     </div>
                     <!-- category-sub-menu start -->
                     <div class="category-sub-menu">
                         <ul>
-                            <li class="has-sub"><a href="# ">Prime Video</a>
+                            <li class="has-sub"><a href="# ">Danh mục sản phẩm</a>
                                 <ul>
                                     <li><a href="#">All Videos</a></li>
-                                    <li><a href="#">Blouses</a></li>
-                                    <li><a href="#">Evening Dresses</a></li>
-                                    <li><a href="#">Summer Dresses</a></li>
-                                    <li><a href="#">T-Rent or Buy</a></li>
-                                    <li><a href="#">Your Watchlist</a></li>
-                                    <li><a href="#">Watch Anywhere</a></li>
-                                    <li><a href="#">Getting Started</a></li>  
                                 </ul>
                             </li>
-                            <li class="has-sub"><a href="#">Computer</a>
+                            <li class="has-sub"><a href="#">Danh mục bài viết</a>
                                 <ul>
                                     <li><a href="#">TV & Video</a></li>
-                                    <li><a href="#">Audio & Theater</a></li>
-                                    <li><a href="#">Camera, Photo</a></li>
-                                    <li><a href="#">Cell Phones</a></li>
-                                    <li><a href="#">Headphones</a></li>
-                                    <li><a href="#">Video Games</a></li>
-                                    <li><a href="#">Wireless Speakers</a></li> 
                                 </ul>
                             </li>
+                            {{--<li class="has-sub"><a href="#">Electronics</a>
+                                <ul>
+                                    <li><a href="#">Amazon Home</a></li>
+                                    <li><a href="#">Kitchen & Dining</a></li>
+                                    <li><a href="#">Bed & Bath</a></li>
+                                    <li><a href="#">Appliances</a></li>    
+                                </ul>
+                            </li>--}}
+                        </ul>
+                    </div>
+                    <!-- category-sub-menu end -->
+                </div>
+                <div class="sidebar-categores-box mt-sm-30 mt-xs-30">
+                    <div class="sidebar-title">
+                        <h2>Sản phẩm nổi bật</h2>
+                    </div>
+                    <!-- category-sub-menu start -->
+                    <div class="category-sub-menu">
+                        <ul>
                             <li class="has-sub"><a href="#">Electronics</a>
                                 <ul>
                                     <li><a href="#">Amazon Home</a></li>
@@ -751,9 +757,38 @@
                     </div>
                     <!-- category-sub-menu end -->
                 </div>
+                <div class="sidebar-categores-box mt-sm-30 mt-xs-30">
+                    <div class="sidebar-title">
+                        <h2>Bài viết nổi bật</h2>
+                    </div>
+                    <!-- category-sub-menu start -->
+                    <div class="category-sub-menu">
+                        <ul>
+                            <li class="has-sub"><a href="# ">Danh mục sản phẩm</a>
+                                <ul>
+                                    <li><a href="#">All Videos</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-sub"><a href="#">Danh mục bài viết</a>
+                                <ul>
+                                    <li><a href="#">TV & Video</a></li>
+                                </ul>
+                            </li>
+                            {{--<li class="has-sub"><a href="#">Electronics</a>
+                                <ul>
+                                    <li><a href="#">Amazon Home</a></li>
+                                    <li><a href="#">Kitchen & Dining</a></li>
+                                    <li><a href="#">Bed & Bath</a></li>
+                                    <li><a href="#">Appliances</a></li>    
+                                </ul>
+                            </li>--}}
+                        </ul>
+                    </div>
+                    <!-- category-sub-menu end -->
+                </div>
                 <!--sidebar-categores-box end  -->
                 <!--sidebar-categores-box start  -->
-                <div class="sidebar-categores-box">
+                {{--<div class="sidebar-categores-box">
                     <div class="sidebar-title">
                         <h2>Filter By</h2>
                     </div>
@@ -831,7 +866,7 @@
                         </div>
                      </div>
                     <!-- filter-sub-area end -->
-                </div>
+                </div>--}}
                 <!--sidebar-categores-box end  -->
                 <!-- category-sub-menu start -->
                 <div class="sidebar-categores-box mb-sm-0 mb-xs-0">
