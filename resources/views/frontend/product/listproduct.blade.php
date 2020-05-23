@@ -743,7 +743,7 @@
                         <h2>Sản phẩm nổi bật</h2>
                     </div>
                     <!-- category-sub-menu start -->
-                    <div class="category-sub-menu">
+                    <!-- <div class="category-sub-menu">
                         <ul>
                             <li class="has-sub"><a href="#">Electronics</a>
                                 <ul>
@@ -754,7 +754,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                     <!-- category-sub-menu end -->
                 </div>
                 <div class="sidebar-categores-box mt-sm-30 mt-xs-30">
@@ -865,11 +865,11 @@
                             </form>
                         </div>
                      </div>
-                    <!-- filter-sub-area end -->
+                    
                 </div>--}}
                 <!--sidebar-categores-box end  -->
                 <!-- category-sub-menu start -->
-                <div class="sidebar-categores-box mb-sm-0 mb-xs-0">
+                <!-- <div class="sidebar-categores-box mb-sm-0 mb-xs-0">
                     <div class="sidebar-title">
                         <h2>Laptop</h2>
                     </div>
@@ -883,8 +883,8 @@
                             <li><a href="# ">Accessories</a></li>
                         </ul>
                     </div>
-                    <!-- category-sub-menu end -->
-                </div>
+                    //category-sub-menu end
+                </div> --> -->
             </div>
         </div>
     </div>
